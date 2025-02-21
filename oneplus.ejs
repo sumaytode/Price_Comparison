@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oneplus List</title>
+    <link rel="stylesheet" href="/styles.css"> <!-- Link to your CSS -->
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <h1 class="head">Price Comparison</h1>
+        <h3 class="descri">Compare And Find The Best Products With Expert Reviews, Detailed Features and Real-Time Prices</h3>
+        
+        <!-- Search Form -->
+        <form action="/search" method="GET">
+            <input class="search" type="search" name="q" id="search" placeholder="Search">
+            <button class="search" type="submit">Search</button>
+        </form>
+
+        <!-- Phone List -->
+        <div class="PhoneList">
+            <swap><a href="/search?q=iPhone">iPhone</a></swap>
+            <swap><a href="/search?q=Samsung">Samsung</a></swap>
+            <swap><a href="/search?q=Motorola">Motorola</a></swap>
+            <swap><a href="/search?q=Oppo">Oppo</a></swap>
+            <swap><a href="/search?q=OnePlus">OnePlus</a></swap>
+            <swap><a href="/search?q=Redmi">Redmi</a></swap>
+        </div>
+    </div>
+    
+    <div class="card-container">
+        <% onepluss.forEach(function(oneplus) { %>
+            <div class="card">
+                <img class="card-image" src="<%= oneplus.Image %>" alt="<%= oneplus.Title %>">
+                <div class="card-info">
+                    <h2 class="card-title"><%= oneplus.Title %></h2>
+                    <p class="card-price">
+                        Amazon Price: 
+                        <span class="<%= oneplus.Amazon_Price < oneplus.Flipkart_Price ? 'highlight' : '' %>">
+                            ₹<%= oneplus.Amazon_Price %>
+                        </span>
+                        <span>
+                            <a href="<%= oneplus.Amazon_Link %>" >
+                            <button>Link</button>
+                            </a>
+                        </span>
+                    </p>
+                    <p class="card-price">
+                        Flipkart Price: 
+                        <span class="<%= oneplus.Flipkart_Price < oneplus.Amazon_Price ? 'highlight' : '' %>">
+                            ₹<%= oneplus.Flipkart_Price %>
+                        </span>
+                        <span>
+                            <a href="<%= oneplus.Flipkart_Link %>">
+                            <button>Link</button>
+                            </a>
+                        </span>
+                    </p>
+                    <p class="card-rating">⭐ <%= oneplus.Rating %></p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</body>
+</html>

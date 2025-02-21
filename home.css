@@ -1,0 +1,119 @@
+body{
+    font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+}
+
+/* Header Section */
+.header {
+    background-color: #272757; /* Fixed: kebab-case and removed quotes */
+    font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+/* Main Heading */
+.head {
+    padding-top: 30px; /* Fixed: no quotes */
+    color: white;
+    margin: 20px;
+    text-align: center; /* Fixed: kebab-case */
+    font-size: 50px; 
+    font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+/* Description Section */
+.descri {
+    font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    padding: 0 120px; /* Fixed: simplified padding */
+    text-align: center; 
+    color: white /* Fixed: Hex value without quotes */
+}
+
+/* Phone List Section */
+/* Phone List Section */
+.PhoneList {
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    font-size: 20px;
+}
+
+/* Change link color to white and remove underline */
+.PhoneList a {
+    color: white;          /* Makes links white */
+    text-decoration: none; /* Removes underline */
+}
+
+/* Optional: Add hover effect for better UX */
+.PhoneList a:hover {
+    color: #ccc;          /* Light grey on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+
+/* Centering the search bar */
+form {
+    display: flex;          /* Makes the form a flex container */
+    justify-content: center; /* Centers horizontally */
+    align-items: center;     /* Centers vertically (if needed) */
+    font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+    margin-top: 20px;        /* Optional: Adds spacing from the top */
+}
+
+/* Optional: Styling for better appearance */
+input[type="search"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+}
+
+button {
+    padding: 10px 20px;
+    margin-left: 10px; /* Space between input and button */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Container for cards */
+/* Container for cards (Horizontal Layout) */
+.container {
+    display: flex;              /* Flexbox to align items horizontally */
+    flex-direction: row;        /* Ensure horizontal alignment */
+    justify-content: flex-start; /* Align cards from the left */
+    gap: 20px;                  /* Space between cards */
+    padding: 20px;              /* Padding around the container */
+    overflow-x: auto;           /* Horizontal scroll if cards overflow */
+    white-space: nowrap;        /* Prevent cards from wrapping to the next line */
+    font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+}
+
+/* Card Styling */
+.card {
+    flex: 0 0 auto;             /* Prevent cards from shrinking or stretching */
+    border: 2px solid #ddd;     /* Light border around the card */
+    border-radius: 10px;        /* Rounded corners */
+    padding: 20px;              /* Padding inside each card */
+    width: 250px;               /* Set a fixed width for each card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    background-color: #fff;     /* Background color for the card */
+    text-align: center;         /* Center text inside the card */
+    font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+}
+
+/* Image inside the card */
+img {
+    width: 100%;                /* Make image take full width of the card */
+    height: auto;               /* Maintain aspect ratio */
+    border-radius: 8px;         /* Rounded corners for the image */
+    object-fit: cover;          /* Ensure the image covers the area without distortion */
+    margin-bottom: 15px;        /* Space below the image */
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oppo List</title>
+    <link rel="stylesheet" href="/styles.css"> <!-- Link to your CSS -->
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <h1 class="head">Price Comparison</h1>
+        <h3 class="descri">Compare And Find The Best Products With Expert Reviews, Detailed Features and Real-Time Prices</h3>
+        
+        <!-- Search Form -->
+        <form action="/search" method="GET">
+            <input class="search" type="search" name="q" id="search" placeholder="Search">
+            <button class="search" type="submit">Search</button>
+        </form>
+
+        <!-- Phone List -->
+        <div class="PhoneList">
+            <swap><a href="/search?q=iPhone">iPhone</a></swap>
+            <swap><a href="/search?q=Samsung">Samsung</a></swap>
+            <swap><a href="/search?q=Motorola">Motorola</a></swap>
+            <swap><a href="/search?q=Oppo">Oppo</a></swap>
+            <swap><a href="/search?q=OnePlus">OnePlus</a></swap>
+            <swap><a href="/search?q=Redmi">Redmi</a></swap>
+        </div>
+    </div>
+    
+    <div class="card-container">
+        <% oppos.forEach(function(oppo) { %>
+            <div class="card">
+                <img class="card-image" src="<%= oppo.Image %>" alt="<%= oppo.Title %>">
+                <div class="card-info">
+                    <h2 class="card-title"><%= oppo.Title %></h2>
+                    <p class="card-price">
+                        Amazon Price: 
+                        <span class="<%= oppo.Amazon_Price < oppo.Flipkart_Price ? 'highlight' : '' %>">
+                            ₹<%= oppo.Amazon_Price %>
+                        </span>
+                        <spam>
+                            <a href="<%= oppo.Amazon_Link %>">
+                            <button>Link</button>
+                            </a>
+                        </spam>
+                    </p>
+                    <p class="card-price">
+                        Flipkart Price: 
+                        <span class="<%= oppo.Flipkart_Price < oppo.Amazon_Price ? 'highlight' : '' %>">
+                            ₹<%= oppo.Flipkart_Price %>
+                        </span>
+                        <span>
+                            <a href="<%= oppo.Flipkart_Link %>">
+                            <button>Link</button>
+                            </a>
+                        </span
+                    </p>
+                    <p class="card-rating">⭐ <%= oppo.Rating %> / 5</p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+
+</body>
+
+</html>

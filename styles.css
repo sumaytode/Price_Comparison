@@ -1,0 +1,165 @@
+body {
+    font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+/* Header Section */
+.header {
+    background-color: #272757;
+    padding: 30px 20px;
+    text-align: center;
+    color: white;
+}
+
+/* Main Heading */
+.head {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+/* Description Section */
+.descri {
+    font-size: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Search Bar */
+form {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+input[type="search"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 250px;
+}
+
+button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Phone List Section */
+.PhoneList {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+.PhoneList a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.PhoneList a:hover {
+    color: #ccc;
+    text-decoration: underline;
+}
+
+/* Card Container */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Card Styling */
+.card {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 600px;
+    width: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Image */
+.card-image {
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+    border-right: 1px solid #ddd;
+}
+
+/* Card Info */
+.card-info {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.card-price {
+    font-size: 1.2rem;
+    margin: 5px 0;
+    color: #E63946;
+}
+
+.card-rating {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Highlight Cheapest Price */
+.highlight {
+    font-weight: bold;
+    color: green;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .PhoneList {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-image {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+}

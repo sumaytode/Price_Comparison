@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redmi List</title>
+    <link rel="stylesheet" href="/styles.css"> <!-- Link to your CSS -->
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <h1 class="head">Price Comparison</h1>
+        <h3 class="descri">Compare And Find The Best Products With Expert Reviews, Detailed Features and Real-Time Prices</h3>
+        
+        <!-- Search Form -->
+        <form action="/search" method="GET">
+            <input class="search" type="search" name="q" id="search" placeholder="Search">
+            <button class="search" type="submit">Search</button>
+        </form>
+
+        <!-- Phone List -->
+        <div class="PhoneList">
+            <swap><a href="/search?q=iPhone">iPhone</a></swap>
+            <swap><a href="/search?q=Samsung">Samsung</a></swap>
+            <swap><a href="/search?q=Motorola">Motorola</a></swap>
+            <swap><a href="/search?q=Oppo">Oppo</a></swap>
+            <swap><a href="/search?q=OnePlus">OnePlus</a></swap>
+            <swap><a href="/search?q=Redmi">Redmi</a></swap>
+        </div>
+    </div>
+    
+    <div class="card-container">
+        <% redmis.forEach(function(redmi) { %>
+            <div class="card">
+                <img class="card-image" src="<%= redmi.Image %>" alt="<%= redmi.Title %>">
+                <div class="card-info">
+                    <h2 class="card-title"><%= redmi.Title %></h2>
+                    <p class="card-price">
+                        Amazon Price: 
+                        <span class="<%= redmi.Amazon_Price < redmi.Flipkart_Price ? 'highlight' : '' %>">
+                            ₹<%= redmi.Amazon_Price %>
+                        </span>
+                        <span>
+                            <a href="<%= redmi.Amazon_Link %>">
+                            <button>Link</button>
+                            </a>
+                        </span>
+                    </p>
+                    <p class="card-price">
+                        Flipkart Price: 
+                        <span class="<%= redmi.Flipkart_Price < redmi.Amazon_Price ? 'highlight' : '' %>">
+                            ₹<%= redmi.Flipkart_Price %>
+                        </span>
+                        <span>
+                            <a href="<%= redmi.Flipkart_Link %>">
+                            <button>Link</button>
+                            </a>
+                        </span>
+                    </p>
+                    <p class="card-rating">⭐ <%= redmi.Rating %> / 5</p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+
+</body>
+
+</html>

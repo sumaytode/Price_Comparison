@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Comparison - Search Results</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <h1 class="head">Price Comparison</h1>
+        <h3 class="descri">Compare And Find The Best Products With Expert Reviews, Detailed Features, and Real-Time Prices</h3>
+
+        <!-- Search Form -->
+        <form action="/search" method="GET">
+            <input class="search" type="search" name="q" id="search" placeholder="Search" value="<%= searchQuery %>">
+            <button class="search" type="submit">Search</button>
+        </form>
+
+        <!-- Phone List -->
+        <div class="PhoneList">
+            <swap><a href="/search?q=iPhone">iPhone</a></swap>
+            <swap><a href="/search?q=Samsung">Samsung</a></swap>
+            <swap><a href="/search?q=Motorola">Motorola</a></swap>
+            <swap><a href="/search?q=Oppo">Oppo</a></swap>
+            <swap><a href="/search?q=OnePlus">OnePlus</a></swap>
+            <swap><a href="/search?q=Redmi">Redmi</a></swap>
+        </div>
+    </div>
+
+    <!-- Search Results Section -->
+    <div class="card-container">
+        <% if (results.length > 0) { %>
+            <h2 class="search-result">Search Results for "<%= searchQuery %>"</h2>
+
+            <% results.forEach(function(product) { %>
+                <!-- Product Card -->
+                <div class="card">
+                    <img class="card-image" src="<%= product.Image %>" alt="<%= product.Title %>">
+                    <div class="card-info">
+                        <h2 class="card-title"><%= product.Title %></h2>
+                        <p class="card-price">
+                            Amazon Price: 
+                            <span class="<%= product.Amazon_Price < product.Flipkart_Price ? 'highlight' : '' %>">
+                                ₹<%= product.Amazon_Price %>
+                            </span>
+                            <span>
+                                <a href="<%= product.Amazon_Link %>">
+                                <button>
+                                    Link
+                                </button>
+                                </a>
+                            </span>
+                        </p>
+                        <p class="card-price">
+                            Flipkart Price: 
+                            <span class="<%= product.Flipkart_Price < product.Amazon_Price ? 'highlight' : '' %>">
+                                ₹<%= product.Flipkart_Price %>
+                            </span>
+                            <span>
+                                <a href="<%= product.Flipkart_Link %>">
+                                    <button>
+                                        Link
+                                    </button>
+                                    </a>
+                            </span>
+                        </p>
+                        <p class="card-rating">⭐ <%= product.Rating %> / 5</p>
+                    </div>
+                </div>
+            <% }); %>
+
+        <% } else { %>
+            <!-- No Results Found -->
+            <h2>No results found for "<%= searchQuery %>". Try another search!</h2>
+        <% } %>
+    </div>
+
+</body>
+
+</html>
